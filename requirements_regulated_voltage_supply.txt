@@ -1,0 +1,113 @@
+To do:
+ 
+Done:
+ - add snubber capacitors, see effect?
+ - try to simulate an alternating current load
+ - try to model what happens when the power is cut OFF (unable to do)
+ - try without the capacitance multiplier (~40 dB worse)
+ - pick one alternate N-MOSFET to try
+ - pick out a proper gate protection diode for the N-MOSFET
+ - add multiples of decoupling caps for lower ESR
+ - add 0-Ohm resistors for build convenience
+ - confirm if the AC input is meant to be 9V RMS or 9V Pk-Pk
+ - find a model for a negative regulator (LT1175, LT3015)
+
+Top-Level Requirements of the Power Supply:
+
+0.0) voltage ripple 4 uV (taken from TPS7A47 datasheet)
+0.1) voltage DC +3.3V, +5.0V, +12.0V, -12.0V
+0.2) current DC 500mA
+0.3) passively cooled (i.e. no forced-air)
+0.4) sustainably sourceable (no short lifecycle or boutique parts)
+
+Assumptions:
+
+- single sided PCA configuration
+- don't have to worry about getting AC mains voltage
+- don't have to worry about the connection/interface to the load
+- use TPS7A47 series regulators
+- connects strictly to AC mains (60Hz, 120V RMS, single phase)
+- AC mains will be switched on/off arbitrarily
+- max specified load won't be exceeded
+- don't have to worry about surges (i.e. AC mains fluctuations)
+- don't have to worry about abnormal environmental conditions (humidity, temperature)
+- operate at room temperature indoors
+
+Nice-to-have:
+
+- long life (>5000 Hrs)
+- less than 25cm^2
+- less than $50
+- all surface mount
+
+Requirements for the ripple pre-attenuation section
+
+1.0) ripple is sufficiently low not to impede (0.0):
+ - PSRR (dB) = 20log10(Vin/Vout).  
+ - PSRR @ 60 Hz = 80 dB 
+ Therefore:
+ - Vout = 4*10^(-6) V
+ - Therefore, Vin = 40 mV (largest allowable ripple)
+ - Similarly, Vin = 4 mV (gives 1 decade margin)
+
+1.1) DC level is sufficiently high:
+ - datasheet for TPS7A47 to have 1V dropout for -80dB PSRR performance
+ - datasheet for TPS7A47 to minimum 307mV for sufficient DC output level
+ - don't want extra dropout (i.e. > 1V) otherwise wasted energy as heat
+ - Iout = 500mA needs to be sustained
+
+1.2.1) Vce of the pass transistor is sufficient
+ - as a reference (illustrative example):
+ - datasheet for MJD112/MJD117 STM charateristic curves and plots show:
+ 		- saturation voltage 25 deg C is steady (flat) with Vce = 0.85V
+ 		- saturation collector current over this range is 0.01A to 1.00A
+ - we care about 0-500mA Ic, so give 50% margin on top of Vce
+ - therefore minimum (at all times) is Vce = 1.5 x 0.85 V = 1.275 V
+ - to be extra safe Vce should be Vce = 2.0 X 0.85 V = 1.70 V
+ - NOTE: restricting the base-current helps a stay out of saturation
+ - NOTE: restricting the base-current means more Vce drop and dissipare more power
+ - NOTE: the resistor connected to the base also affects the corner frequency
+ - NOTE: the transistor needs enough gain so that its RC filter current remains small even when under large load (i.e. large power)
+
+ 1.2.2) Vgs of the pass MOSET is sufficiently low 
+ - example: Vgs = 2.5V means you'll also have an average drop of 2.5V across the drain-to-source connection (Vds)
+ - If Vgs is low, you dissipate less average power in the MOSFET
+ - If Vgs is low, the source voltage will be a bit higher, so there is more headroom left for the dropout of the regulator.
+ - "low" Vgs can be obtained (but it is special), around 1-2V
+ - "high" Vgs is more common, is usually 2-4V, but can be more
+ - NOTE: Transconductance, gfs, is a measure of the sensitivity of drain current to changes in gate-source bias.  MOSFET transconductance is sort of akin to BJT Hfe or Beta.  
+ - Rds(on) can be in the 100s of mOhms, but modern devices can be much lower (in some cases, less than 10 mOhms, even for high power transistors)
+
+
+Come up with some test cases (do these for 5V, +12V, -12V)
+
+A) max current:
+- Iout = 5mA
+
+- Vin (DC) = 
+- Vin (AC) = 
+- Vce = 
+- Vout (DC) = 
+- Vout (AC) = 
+
+
+B) medium current:
+- Iout = 50mA
+
+- Vin (DC) = 
+- Vin (AC) = 
+- Vce = 
+- Vout (DC) = 
+- Vout (AC) = 
+
+C) low current:
+- Iout = 500mA
+
+- Vin (DC) = 
+- Vin (AC) = 
+- Vce = 
+- Vout (DC) = 
+- Vout (AC) = 
+
+
+

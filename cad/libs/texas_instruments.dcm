@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPS7A470X
+D 36-V, 1-A, 4.17-μVRMS, RF low-dropout (LDO) voltage regulator
+K linear regulator ldo adjustable positive
+F http://www.ti.com/lit/ds/symlink/tps7a47.pdf
+$ENDCMP
+#
+#End Doc Library

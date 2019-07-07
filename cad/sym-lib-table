@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name gppr-rescue)(type Legacy)(uri ${KIPRJMOD}/gppr-rescue.lib)(options "")(descr ""))
+)

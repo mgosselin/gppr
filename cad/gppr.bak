@@ -1,0 +1,160 @@
+EESchema Schematic File Version 4
+LIBS:gppr-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Transistor_FET:QM6006D Q?
+U 1 1 5D2064B9
+P 5400 3300
+F 0 "Q?" H 5605 3346 50  0000 L CNN
+F 1 "QM6006D" H 5605 3255 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 5600 3225 50  0001 L CIN
+F 3 "http://www.jaolen.com/images/pdf/QM6006D.pdf" H 5200 3600 50  0001 L CNN
+	1    5400 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D?
+U 1 1 5D206F48
+P 3650 3650
+F 0 "D?" H 3650 3866 50  0000 C CNN
+F 1 "D" H 3650 3775 50  0000 C CNN
+F 2 "" H 3650 3650 50  0001 C CNN
+F 3 "~" H 3650 3650 50  0001 C CNN
+	1    3650 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5D20709C
+P 3750 4450
+F 0 "C?" H 3868 4496 50  0000 L CNN
+F 1 "CP" H 3868 4405 50  0000 L CNN
+F 2 "" H 3788 4300 50  0001 C CNN
+F 3 "~" H 3750 4450 50  0001 C CNN
+	1    3750 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D207185
+P 4350 4550
+F 0 "C?" H 4465 4596 50  0000 L CNN
+F 1 "C" H 4465 4505 50  0000 L CNN
+F 2 "" H 4388 4400 50  0001 C CNN
+F 3 "~" H 4350 4550 50  0001 C CNN
+	1    4350 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Zener D?
+U 1 1 5D207355
+P 5500 3850
+F 0 "D?" H 5500 4066 50  0000 C CNN
+F 1 "D_Zener" H 5500 3975 50  0000 C CNN
+F 2 "" H 5500 3850 50  0001 C CNN
+F 3 "~" H 5500 3850 50  0001 C CNN
+	1    5500 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5D20749E
+P 6800 4600
+F 0 "D?" H 6791 4816 50  0000 C CNN
+F 1 "LED" H 6791 4725 50  0000 C CNN
+F 2 "" H 6800 4600 50  0001 C CNN
+F 3 "~" H 6800 4600 50  0001 C CNN
+	1    6800 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D2075D2
+P 5300 4550
+F 0 "R?" H 5370 4596 50  0000 L CNN
+F 1 "R" H 5370 4505 50  0000 L CNN
+F 2 "" V 5230 4550 50  0001 C CNN
+F 3 "~" H 5300 4550 50  0001 C CNN
+	1    5300 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_2Pole TP?
+U 1 1 5D207A38
+P 4350 2750
+F 0 "TP?" H 4350 2945 50  0000 C CNN
+F 1 "TestPoint_2Pole" H 4350 2854 50  0000 C CNN
+F 2 "" H 4350 2750 50  0001 C CNN
+F 3 "~" H 4350 2750 50  0001 C CNN
+	1    4350 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x04_Female J?
+U 1 1 5D207C94
+P 2450 4150
+F 0 "J?" H 2477 4126 50  0000 L CNN
+F 1 "Conn_01x04_Female" H 2477 4035 50  0000 L CNN
+F 2 "" H 2450 4150 50  0001 C CNN
+F 3 "~" H 2450 4150 50  0001 C CNN
+	1    2450 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5D207E3D
+P 8900 3950
+F 0 "J?" H 8927 3926 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 8927 3835 50  0000 L CNN
+F 2 "" H 8900 3950 50  0001 C CNN
+F 3 "~" H 8900 3950 50  0001 C CNN
+	1    8900 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 5D208096
+P 7500 2900
+F 0 "H?" H 7600 2946 50  0000 L CNN
+F 1 "MountingHole" H 7600 2855 50  0000 L CNN
+F 2 "" H 7500 2900 50  0001 C CNN
+F 3 "~" H 7500 2900 50  0001 C CNN
+	1    7500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_Coaxial J?
+U 1 1 5D219DDF
+P 7500 3300
+F 0 "J?" H 7599 3276 50  0000 L CNN
+F 1 "Conn_Coaxial" H 7599 3185 50  0000 L CNN
+F 2 "" H 7500 3300 50  0001 C CNN
+F 3 " ~" H 7500 3300 50  0001 C CNN
+	1    7500 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:TPS7A470X U?
+U 1 1 5D250BD9
+P 6100 4150
+F 0 "U?" H 7241 4696 50  0000 L CNN
+F 1 "TPS7A470X" H 7241 4605 50  0000 L CNN
+F 2 "Package_DFN_QFN:QFN-20-1EP_5x5mm_P0.65mm_EP3.35x3.35mm" H 6600 3650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps7a47.pdf" H 6600 3650 50  0001 C CNN
+	1    6100 4150
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
