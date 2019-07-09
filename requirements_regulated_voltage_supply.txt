@@ -14,24 +14,26 @@ Done:
 
 Top-Level Requirements of the Power Supply:
 
-0.0) voltage ripple 4 uV (taken from TPS7A47 datasheet)
+0.0) voltage ripple 4 uV (taken from TPS7A47XX datasheet)
 0.1) voltage DC +3.3V, +5.0V, +12.0V, -12.0V
 0.2) current DC 500mA
 0.3) passively cooled (i.e. no forced-air)
 0.4) sustainably sourceable (no short lifecycle or boutique parts)
+0.5) can operate safely across full voltage range of TPS7A47XX/TPS7A33
 
 Assumptions:
 
-- single sided PCA configuration
-- don't have to worry about getting AC mains voltage
-- don't have to worry about the connection/interface to the load
-- use TPS7A47 series regulators
+- single-sided-load PCA configuration
+- use regular AC mains voltage, assume its available (120V rms, 60Hz)
+- use TPS7A4701 or TPS7A33 series regulators
 - connects strictly to AC mains (60Hz, 120V RMS, single phase)
 - AC mains will be switched on/off arbitrarily
-- max specified load won't be exceeded
+- max current load won't be exceeded
 - don't have to worry about surges (i.e. AC mains fluctuations)
 - don't have to worry about abnormal environmental conditions (humidity, temperature)
 - operate at room temperature indoors
+- no built-in current limiting, but current may be limited externally (i.e. with a fuse)
+
 
 Nice-to-have:
 
@@ -78,6 +80,17 @@ Requirements for the ripple pre-attenuation section
  - NOTE: Transconductance, gfs, is a measure of the sensitivity of drain current to changes in gate-source bias.  MOSFET transconductance is sort of akin to BJT Hfe or Beta.  
  - Rds(on) can be in the 100s of mOhms, but modern devices can be much lower (in some cases, less than 10 mOhms, even for high power transistors)
 
+1.5) considerations for operating at the upper-end of voltage range
+ - a conservative calculation:
+ - TPS7A47XX can have 36V input, but recommended max input is 35V
+ - TPS7A47XX can have up to 35V output
+ - Assume (example) 2V drop across source-to-drain of Q1 (pass transistor)
+ - Assume (example) +/- 0.5V ripple at the source pin of Q1 (i.e. 1V pk-pk)
+ - Assume the rectifier diodes drop 0.7V (each)
+ - Then, max voltage at the Q1's source should be 35V + 2V + 0.5V + 0.7V= 38.2V
+ - capacitors at source and gate nodes need to be rated for 35V + 2V + 0.5V = 37.5V or higher
+ - capacitors at the drain node need to be rated for 35V or higher
+ - capacitors at the output node need to be rated for 35V or higher
 
 Come up with some test cases (do these for 5V, +12V, -12V)
 

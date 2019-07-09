@@ -675,4 +675,6 @@ Wire Wire Line
 Wire Wire Line
 	7050 4550 7050 4000
 Connection ~ 7050 4000
+Text Notes 2300 3850 0    50   ~ 0
+Capacitors: Panasonic EEV-FK1H102M
 $EndSCHEMATC
