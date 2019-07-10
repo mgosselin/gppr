@@ -86,7 +86,7 @@ U 1 1 5D207C94
 P 750 4500
 F 0 "J1" H 600 5000 50  0000 L CNN
 F 1 "Conn_01x04_Female" H -50 5100 50  0000 L CNN
-F 2 "Connector_Molex:Molex_Mini-Fit_Jr_5566-04A_2x02_P4.20mm_Vertical" H 750 4500 50  0001 C CNN
+F 2 "Connector_Molex:Molex_Micro-Fit_3.0_43045-0412_2x02_P3.00mm_Vertical" H 750 4500 50  0001 C CNN
 F 3 "~" H 750 4500 50  0001 C CNN
 	1    750  4500
 	-1   0    0    1   
@@ -97,7 +97,7 @@ U 1 1 5D207E3D
 P 10900 4000
 F 0 "J2" H 10650 4300 50  0000 L CNN
 F 1 "Conn_01x02_Female" H 10150 4200 50  0000 L CNN
-F 2 "Connector_Molex:Molex_Mini-Fit_Jr_5566-02A_2x01_P4.20mm_Vertical" H 10900 4000 50  0001 C CNN
+F 2 "Connector_Molex:Molex_Micro-Fit_3.0_43045-0212_2x01_P3.00mm_Vertical" H 10900 4000 50  0001 C CNN
 F 3 "~" H 10900 4000 50  0001 C CNN
 	1    10900 4000
 	1    0    0    -1  
