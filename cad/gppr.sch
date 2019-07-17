@@ -412,16 +412,14 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0103
 U 1 1 5D2B8477
-P 7650 4850
-F 0 "#PWR0103" H 7650 4600 50  0001 C CNN
-F 1 "GND" H 7655 4677 50  0000 C CNN
-F 2 "" H 7650 4850 50  0001 C CNN
-F 3 "" H 7650 4850 50  0001 C CNN
-	1    7650 4850
-	-1   0    0    1   
+P 8000 4900
+F 0 "#PWR0103" H 8000 4650 50  0001 C CNN
+F 1 "GND" H 8005 4727 50  0000 C CNN
+F 2 "" H 8000 4900 50  0001 C CNN
+F 3 "" H 8000 4900 50  0001 C CNN
+	1    8000 4900
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	7650 4850 7650 5100
 Wire Wire Line
 	800  4600 1100 4600
 Wire Wire Line
@@ -544,9 +542,7 @@ F 3 "~" H 10150 4550 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7950 4400 7950 5100
-Wire Wire Line
-	7950 5100 7650 5100
+	7950 4400 7950 4900
 $Comp
 L texas_instruments:TPS7A470X U1
 U 1 1 5D235CDE
@@ -645,10 +641,7 @@ Wire Wire Line
 	6250 4000 6850 4000
 Connection ~ 6250 4000
 Connection ~ 6850 4000
-Wire Wire Line
-	6700 5100 7650 5100
 Connection ~ 6700 5100
-Connection ~ 7650 5100
 Connection ~ 5800 5100
 $Comp
 L Device:R R6
@@ -703,4 +696,24 @@ Wire Wire Line
 	2400 5100 2000 5100
 Connection ~ 2400 5100
 Connection ~ 2000 5100
+$Comp
+L Mechanical:Heatsink_Pad HS1
+U 1 1 5D29E9DA
+P 7650 4900
+F 0 "HS1" V 7929 4895 50  0000 C CNN
+F 1 "Heatsink_Pad" V 7838 4895 50  0000 C CNN
+F 2 "Heatsink:Heatsink_960-23-XX-F-AB-0" H 7662 4850 50  0001 C CNN
+F 3 "~" H 7662 4850 50  0001 C CNN
+	1    7650 4900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6700 5100 7950 5100
+Wire Wire Line
+	7750 4900 7950 4900
+Connection ~ 7950 4900
+Wire Wire Line
+	7950 4900 7950 5100
+Wire Wire Line
+	7950 4900 8000 4900
 $EndSCHEMATC
