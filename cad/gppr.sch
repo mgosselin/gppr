@@ -412,13 +412,13 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0103
 U 1 1 5D2B8477
-P 8000 4900
-F 0 "#PWR0103" H 8000 4650 50  0001 C CNN
-F 1 "GND" H 8005 4727 50  0000 C CNN
-F 2 "" H 8000 4900 50  0001 C CNN
-F 3 "" H 8000 4900 50  0001 C CNN
-	1    8000 4900
-	0    -1   -1   0   
+P 7950 5350
+F 0 "#PWR0103" H 7950 5100 50  0001 C CNN
+F 1 "GND" H 7955 5177 50  0000 C CNN
+F 2 "" H 7950 5350 50  0001 C CNN
+F 3 "" H 7950 5350 50  0001 C CNN
+	1    7950 5350
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	800  4600 1100 4600
@@ -541,19 +541,6 @@ F 3 "~" H 10150 4550 50  0001 C CNN
 	1    10150 4550
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	7950 4400 7950 4900
-$Comp
-L texas_instruments:TPS7A470X U1
-U 1 1 5D235CDE
-P 8150 3300
-F 0 "U1" H 8300 3100 50  0000 R CNN
-F 1 "TPS7A470X" H 8300 3200 50  0000 R CNN
-F 2 "Housings_DFN_QFN:Texas_VQFN-RGW-20" H 8650 2800 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps7a47.pdf" H 8650 2800 50  0001 C CNN
-	1    8150 3300
-	-1   0    0    1   
-$EndComp
 NoConn ~ 7050 3700
 NoConn ~ 7050 3600
 NoConn ~ 7450 3200
@@ -602,14 +589,12 @@ Wire Wire Line
 	8250 4550 7850 4550
 Wire Wire Line
 	7850 4550 7850 4400
-Connection ~ 8250 4000
 Wire Wire Line
 	7450 4400 7450 4550
 Wire Wire Line
 	7450 4550 7050 4550
 Wire Wire Line
 	7050 4550 7050 4000
-Connection ~ 7050 4000
 Text Notes 2150 3850 0    50   ~ 0
 Capacitors: Panasonic EEV-FK1H102M
 Connection ~ 10550 4000
@@ -699,21 +684,48 @@ Connection ~ 2000 5100
 $Comp
 L Mechanical:Heatsink_Pad HS1
 U 1 1 5D29E9DA
-P 7650 4900
-F 0 "HS1" V 7929 4895 50  0000 C CNN
-F 1 "Heatsink_Pad" V 7838 4895 50  0000 C CNN
-F 2 "Heatsink:Heatsink_960-23-XX-F-AB-0" H 7662 4850 50  0001 C CNN
-F 3 "~" H 7662 4850 50  0001 C CNN
-	1    7650 4900
-	0    -1   -1   0   
+P 7550 5450
+F 0 "HS1" V 7829 5445 50  0000 C CNN
+F 1 "Heatsink_Pad" V 7738 5445 50  0000 C CNN
+F 2 "Heatsink:Heatsink_960-23-XX-F-AB-0_Top" H 7562 5400 50  0001 C CNN
+F 3 "~" H 7562 5400 50  0001 C CNN
+	1    7550 5450
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6700 5100 7950 5100
+	6700 5100 7550 5100
+$Comp
+L texas_instruments:TPS7A470X U1
+U 1 1 5D353278
+P 8150 3300
+F 0 "U1" H 8009 3754 50  0000 R CNN
+F 1 "TPS7A470X" H 8009 3845 50  0000 R CNN
+F 2 "Housings_DFN_QFN:Texas_VQFN-RGW-20" H 8650 2800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps7a47.pdf" H 8650 2800 50  0001 C CNN
+	1    8150 3300
+	-1   0    0    1   
+$EndComp
+Connection ~ 8250 4000
+Connection ~ 7050 4000
 Wire Wire Line
-	7750 4900 7950 4900
-Connection ~ 7950 4900
+	7950 4400 7950 5100
 Wire Wire Line
-	7950 4900 7950 5100
+	7950 5100 7950 5350
 Wire Wire Line
-	7950 4900 8000 4900
+	7750 4400 7750 5100
+Connection ~ 7750 5100
+Wire Wire Line
+	7750 5100 7950 5100
+Wire Wire Line
+	7550 4400 7550 5100
+Connection ~ 7550 5100
+Wire Wire Line
+	7550 5100 7650 5100
+Wire Wire Line
+	7550 5100 7550 5350
+Wire Wire Line
+	7650 4400 7650 5100
+Connection ~ 7650 5100
+Wire Wire Line
+	7650 5100 7750 5100
 $EndSCHEMATC
